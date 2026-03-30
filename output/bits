@@ -1,0 +1,27 @@
+141:	job->bits = ntohl(job->bits);
+144:		job->wib[i] = ntohs(job->wib[i]);
+145:		job->hib[i] = ntohs(job->hib[i]);
+148:	for (i = 0; i < job->bits; i++)
+149:		job->coeff[i] = ntohs(job->coeff[i]);
+166:	job->bits = htonl(job->bits);
+169:		job->wib[i] = htons(job->wib[i]);
+170:		job->hib[i] = htons(job->hib[i]);
+173:	for (i = 0; i < job->bits; i++)
+174:		job->coeff[i] = htons(job->coeff[i]);
+319:	job->bits = bits;
+321:		job->wib[i] = 64 * wib[i] - 1;
+322:		job->hib[i] = hib[i];
+326:		job->iv[i] = dctcompbuf[0][0][0][i];
+334:	for(i = 0; i < job->bits; i++) {
+336:		if (lw > job->wib[coef]) {
+339:			if (lh >= job->hib[coef]) {
+350:		job->coeff[i] = dctcompbuf[coef][lh][lw / 64][lw % 64];
+373:	if (!initv5 || changed || memcmp(iv, job->iv, 6)) {
+376:		memcpy(iv, job->iv, sizeof(iv));
+377:		memcpy(key, job->iv, 6);
+412:	memcpy(iv, job->iv, sizeof(job->iv));
+430:	lwib = job->wib;
+431:	lhib = job->hib;
+432:	coeff = job->coeff;
+478:	if (length * 8 >= job->bits)
+515:	if (length * 8 >= job->bits)
